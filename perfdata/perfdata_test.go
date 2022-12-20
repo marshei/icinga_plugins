@@ -1,18 +1,19 @@
-/* This file is part of icinga_plugins.
+/*
+	This file is part of icinga_plugins.
 
-Foobar is free software: you can redistribute it and/or modify
+Icinga Plugins Support is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
-Foobar is distributed in the hope that it will be useful,
+Icinga Plugins Support is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
- */
+along with Icinga Plugins Support.  If not, see <http://www.gnu.org/licenses/>.
+*/
 package perfdata
 
 import "testing"
@@ -138,14 +139,14 @@ func TestSetMaximum(t *testing.T) {
 }
 
 func TestString(t *testing.T) {
-	pd := CreatePerformanceData("testing", 123.43, "s")
+	pd := CreatePerformanceData("testing", 123.00, "s")
 
 	pd.SetWarning("48")
 	pd.SetCritical("55")
 	pd.SetMinimum("13")
 	pd.SetMaximum("875")
 
-	want := "'testing'=123.430000s;48;55;13;875"
+	want := "'testing'=123s;48;55;13;875"
 
 	if pd.String() != want {
 		t.Errorf("CreatePerformanceData was incorrect, got: %s, want: %s.", pd.String(), want)

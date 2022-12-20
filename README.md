@@ -1,5 +1,7 @@
 # Icinga Plugins Support
 
+![CI](https://github.com/marshei/icinga_plugins/workflows/CI/badge.svg?branch=main)
+
 This repository contains source code written in Go to parse and
 evaluate Icinga thresholds or threshold ranges as defined [here](https://icinga.com/docs/icinga-2/latest/doc/05-service-monitoring/#threshold-ranges)
 
